@@ -1,0 +1,18 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - image: dagandersen/system1:latest
+          name: service
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi

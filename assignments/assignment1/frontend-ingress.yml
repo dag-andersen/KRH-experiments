@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example5fRontend
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: quotes.localhost
+    http:
+      paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service: 
+              name: frontend
+              port:
+                number: 5000

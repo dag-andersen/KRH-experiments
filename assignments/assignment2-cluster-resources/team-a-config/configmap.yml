@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config-a
+  namespace: team-a
+data:
+  ENVIRONMENT_VAR_4: "THIS IS A ENVIRONMENT VARIABLE"

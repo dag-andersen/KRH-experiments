@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: correct-worker
+  namespace: team-b
+  labels:
+    system: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      system: worker
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        system: worker
+    spec:
+      containers:
+        - image: "busybox:latest"
+          name: backend
+          command: ["sh", "-c", "while true; do echo 'Hello, World!'; sleep 10; done"]
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
