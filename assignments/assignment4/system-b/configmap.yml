@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-b
+data:
+  NUMBER_OF_THREADS: "2"
+  USER: root

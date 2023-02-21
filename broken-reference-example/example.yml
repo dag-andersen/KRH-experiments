@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: echo-server
+      image: "org/image"
+      env:
+      - name: "DB_PASSWORD"
+        valueFrom:
+          configMapKeyRef:
+            name: my-configgg
+            key: DB_PASSWORD
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config 
+data:
+  DB_PASSWORD: "very secret password"

@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-a
+  labels:
+    app: system-a
+data:
+  THIRD_PARTY_API: "https://api.example.com"
+  THIRD_PARTY_API_TOKEN: "1234567890abcdef"

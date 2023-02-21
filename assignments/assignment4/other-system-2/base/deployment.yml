@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-c
+  labels:
+    app: system-a
+spec:
+  selector:
+    matchLabels:
+      app: a-system  
+  template:
+    metadata:
+      labels:
+        app: a-system
+    spec:
+      containers:
+        - image: org/system-a:latest
+          name: container-a
+          ports:
+            - containerPort: 5000
+          env:
+            - name: BACKEND_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: config-a
+                  key: THIRD_PARTY_API
+            - name: BACKEND_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: config-a
+                  key: THIRD_PARTY_API_KEY 
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi

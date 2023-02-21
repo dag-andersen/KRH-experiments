@@ -162,16 +162,27 @@ This is a diagram of Kubernetes resources and how they depend on each other.
 --->
 ---
 
-<!---
-# 4 Confusion
+# 4) Confusion
 
 ## Descriptions
-You team is new to kubernetes and they dont know any good practices when it comes to naming and folder structure of kubernetes resources.
+Your team is new to Kubernetes, and they don't know any good practices regarding the naming and folder structure of Kubernetes resources.
+They are currently working on a few projects and experimenting with some new systems in the same repo. This means there is a lot of random files and incomplete systems lying around in the repo.
 
-## Issue
-you are told that there is a issue in X system.
-- Fix the issue
---->
+Luckily you don't need to worry about that since you will only be working in two isolated folders, `./assignment4/system-a` and `./assignment4/system-b`.
+
+A diagram of the final result can be seen in the diagram below.
+
+## Note
+- None of the resources have a namespace specified.
+
+## Task
+- Fix the broken references (X)
+
+## Diagram
+
+This is a diagram of Kubernetes resources and how they depend on each other. 
+
+![](./images/assignments_as4.png)
 
 <!---
 ## Answer

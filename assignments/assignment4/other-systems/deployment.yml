@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-a
+spec:
+  selector: 
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+        system: my-system
+        type: b
+    spec:
+      containers:
+        - name: echo-server
+          image: "dagandersen/echo-server"
+          args:
+            - "my-service-b"
+          env:
+            - name: "SECRET2"
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: passwor
+            - name: "CONFIG2"
+              valueFrom:
+                configMapKeyRef:
+                  key: key
+                  name: my-config
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "50Mi"

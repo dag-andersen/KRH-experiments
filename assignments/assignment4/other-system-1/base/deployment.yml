@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    system: deployment-c
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      system: b
+  template:
+    metadata:
+      labels:
+        system: b
+    spec:
+      containers:
+        - image: org/system-c:latest
+          name: container-b
+          ports:
+            - containerPort: 5432
+          env:
+            - name: USER
+              valueFrom:
+                configMapKeyRef:
+                  name: my-config
+                  key: USER
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: DB_PASSWORD
+            - name: NUMBER_OF_THREADS
+              valueFrom:
+                configMapKeyRef:
+                  name: my-config
+                  key: NUMBER_OF_THREADS
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi

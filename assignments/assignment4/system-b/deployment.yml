@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-b
+  labels:
+    app: system-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: system-b
+  template:
+    metadata:
+      labels:
+        app: system-b
+    spec:
+      containers:
+        - image: org/deployment-b:latest
+          name: container-b
+          ports:
+            - containerPort: 5432
+          env: 
+            - name: SYSTEM_A_HOST
+              value: "service-a" # ✅
+            - name: USER
+              valueFrom:
+                configMapKeyRef:
+                  name: my-config # config-b
+                  key: USERS # USER
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret-b # my-secret-b
+                  key: DB_PASSCODE # PASSWORD
+            - name: THREAD_COUNT
+              valueFrom:
+                configMapKeyRef:
+                  name: my-config # config-b
+                  key: NUMBER_OF_THREAD # NUMBER_OF_THREADS
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi

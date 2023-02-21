@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-a
+spec:
+  template:
+    spec:
+      containers:
+        - image: perl:5.34.0
+          command: ["perl", "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+          name: job-a
+          resources: {}
+      restartPolicy: Never
