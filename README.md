@@ -1,6 +1,8 @@
-# Assignments for testing KRH
+# Assignments for testing the impact of using the [_KRH_](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter)
 
-## Rules:
+This assignment will test how many and how fast users of the KRH find and fix bugs caused by broken references in Kubernetes manifests. Each task will run until the participant has either found and fixed all the issues or 5 minutes have passed.
+
+## Rules
 - You are allowed to read the README, before starting the assignments.
 - You are *not* allowed to add or delete files
 - You are *not* allowed to move files.
@@ -72,12 +74,13 @@ You want to check there is no issue related to broken references between the Kub
 
 The files can be seen in `./assignment1`
 
-## Task
-- Fix the broken references (4)
+## Task (Max 5 minutes)
+- Find and fix the broken references
+
 
 ## Diagram
 
-This is a diagram of Kubernetes resources and how they depend on each other. 
+This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
 
 ![](./images/assignments_as1.png)
 
@@ -110,12 +113,11 @@ A diagram of the final result can be seen in the diagram below.
 
 The files needed can be seen in `./assignment2`
 
-## Task
-- Fix the broken references (3)
+## Task (max 5 minutes)
+- Find and fix the broken references
 
 ## Diagram
-
-This is a diagram of Kubernetes resources and how they depend on each other. 
+This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
 
 ![](./images/assignments_as2.png)
 
@@ -135,22 +137,20 @@ References: kustomize build, free service, configMap|secret ref)
 --->
 
 ## Descriptions
-Your team has 2 systems running in production. The systems are named `system1` and `system2` and are built using *Kustomize*.
+Your team has 2 systems running in production. The systems are named `system1` and `system2` and their Kubernetes configuration is built using *Kustomize*.
 
 The team needs to build a simple integration between the two systems. The new system is named *middleware*, and it is your job to create the Kubernetes Manifests for the new system.
 
 The files needed can be seen in `./assignment3/middleware`
 
-## Hint
+## Hint (_maybe i should remove hints..._)
 - Pay attention to the namespaces.
 
-## Task
-- Fix the broken references (3)
-- Fix the broken Kustomize file (1)
+## Task (max 5 minutes)
+- Find and fix the issues
 
 ## Diagram
-
-This is a diagram of Kubernetes resources and how they depend on each other. 
+This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
 
 ![](./images/assignments_as3.png)
 
@@ -162,25 +162,25 @@ This is a diagram of Kubernetes resources and how they depend on each other.
 --->
 ---
 
-# 4) Confusion
+# 4) Bidirectional dependencies  
 
 ## Descriptions
 Your team is new to Kubernetes, and they don't know any good practices regarding the naming and folder structure of Kubernetes resources.
-They are currently working on a few projects and experimenting with some new systems in the same repo. This means there is a lot of random files and incomplete systems lying around in the repo.
+They are currently working on a few projects and experimenting with some new systems in the same repository. This means there is a lot of random files and incomplete systems lying around in the repository.
 
 Luckily you don't need to worry about that since you will only be working in two isolated folders, `./assignment4/system-a` and `./assignment4/system-b`.
 
 A diagram of the final result can be seen in the diagram below.
 
 ## Note
-- None of the resources have a namespace specified.
+- None of the resources have a namespace specified. Keep it that way.
 
-## Task
-- Fix the broken references (X)
+## Task (max 5 minutes)
+- Find and fix the broken references
 
 ## Diagram
 
-This is a diagram of Kubernetes resources and how they depend on each other. 
+This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
 
 ![](./images/assignments_as4.png)
 
