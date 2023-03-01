@@ -70,17 +70,16 @@ Users report that they can't access the frontend. You investigate and realize th
 
 Furthermore, you check the logs and see that the frontend prints the error message: "Can't access data."
 
-You want to check there is no issue related to broken references between the Kubernetes Resources.
+You want to check if there are issues related to broken references between the Kubernetes Resources.
 
 The files can be seen in `./assignment1`
 
 ## Task (Max 5 minutes)
 - Find and fix the broken references
 
-
 ## Diagram
 
-This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as1.png)
 
@@ -117,7 +116,7 @@ The files needed can be seen in `./assignment2`
 - Find and fix the broken references
 
 ## Diagram
-This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as2.png)
 
@@ -150,7 +149,7 @@ The files needed can be seen in `./assignment3/middleware`
 - Find and fix the issues
 
 ## Diagram
-This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as3.png)
 
@@ -180,7 +179,7 @@ A diagram of the final result can be seen in the diagram below.
 
 ## Diagram
 
-This is a diagram of Kubernetes resources and how they are supposed to depend on each other. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as4.png)
 

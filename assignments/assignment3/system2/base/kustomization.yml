@@ -3,7 +3,7 @@ kind: Kustomization
 namePrefix: system2-
 namespace: system2
 commonLabels:
-  app: system1
+  app: system2
 resources:
   - deployment.yml
   - service.yml

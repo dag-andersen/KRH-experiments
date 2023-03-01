@@ -3,7 +3,7 @@ kind: Kustomization
 namePrefix: middleware-
 namespace: default
 commonLabels:
-  app: system1
+  app: middleware
 resources:
   - deployment.yml
   - config-map.yml # configmap.yaml
