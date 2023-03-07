@@ -72,7 +72,7 @@ Furthermore, you check the logs and see that the frontend prints the error messa
 
 You want to check if there are issues related to broken references between the Kubernetes Resources.
 
-The files can be seen in `./assignment1`
+The files can be seen in `./challenge1`
 
 ## Task (Max 5 minutes)
 - Find and fix the broken references
@@ -110,7 +110,7 @@ All Team B's Kubernetes resources are located in the `team-b`-namespace.
 
 A diagram of the final result can be seen in the diagram below.
 
-The files needed can be seen in `./assignment2`
+The files needed can be seen in `./challenge2`
 
 ## Task (max 5 minutes)
 - Find and fix the broken references
@@ -140,7 +140,7 @@ Your team has 2 systems running in production. The systems are named `system1` a
 
 The team needs to build a simple integration between the two systems. The new system is named *middleware*, and it is your job to create the Kubernetes Manifests for the new system.
 
-The files needed can be seen in `./assignment3/middleware`
+The files needed can be seen in `./challenge3/middleware`
 
 ## Hint (_maybe i should remove hints..._)
 - Pay attention to the namespaces.
@@ -167,7 +167,7 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 Your team is new to Kubernetes, and they don't know any good practices regarding the naming and folder structure of Kubernetes resources.
 They are currently working on a few projects and experimenting with some new systems in the same repository. This means there is a lot of random files and incomplete systems lying around in the repository.
 
-Luckily you don't need to worry about that since you will only be working in two isolated folders, `./assignment4/system-a` and `./assignment4/system-b`.
+Luckily you don't need to worry about that since you will only be working in two isolated folders, `./challenge4/system-a` and `./challenge4/system-b`.
 
 A diagram of the final result can be seen in the diagram below.
 
