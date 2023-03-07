@@ -6,5 +6,5 @@ commonLabels:
   app: middleware
 resources:
   - deployment.yml
-  - config-map.yml # configmap.yaml
+  - configmap.yml
   - service.yml

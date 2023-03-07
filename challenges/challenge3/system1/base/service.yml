@@ -5,5 +5,5 @@ metadata:
   name: service
 spec:
   ports:
-  - port: 5000
+  - port: 3000
     protocol: TCP

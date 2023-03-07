@@ -14,7 +14,7 @@ spec:
             - "--system1"
             - "http://system1-service.default:5000"
             - "--system2"
-            - "http://system2-service.system2:5000" # .default
+            - "http://prod-system2-service.default:5000"
           ports:
             - containerPort: 5000
           env:
@@ -27,12 +27,12 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: prod-system1-config
-                key: SYSTEM_1_USERNAME # .SYST3M_1_USERNAME
+                key: SYST3M_1_USERNAME
           - name: REFRESH_INTERVAL
             valueFrom:
               configMapKeyRef:
                 name: my-config
-                key: INTERVAL_REFRESH 
+                key: INTERVALS_REFRESH 
           resources:
             limits:
               cpu: 100m

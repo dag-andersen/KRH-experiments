@@ -109,7 +109,7 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 --->
 ---
 
-# 3) Middleware
+# 3) Integrating with two systems
 
 <!---
 Scanning Technique: Kustomize
@@ -117,14 +117,11 @@ References: kustomize build, free service, configMap|secret ref)
 --->
 
 ## Descriptions
-Your team has 2 systems running in production. The systems are named `system1` and `system2` and their Kubernetes configuration is built using *Kustomize*.
+Your team has 2 systems running in _production_. The systems are named `system1` and `system2` and their Kubernetes configuration is built using *Kustomize*.
 
 The team needs to build a simple integration between the two systems. The new system is named *middleware*, and it is your job to create the Kubernetes Manifests for the new system.
 
 The files needed can be seen in `./challenge3/middleware`
-
-## Hint (_maybe i should remove hints..._)
-- Pay attention to the namespaces.
 
 ## Task (max 5 minutes)
 - Find and fix the issues
@@ -133,12 +130,13 @@ The files needed can be seen in `./challenge3/middleware`
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as3.png)
+<!-- ![](./images/assignments_as3-answ.png) -->
 
 <!---
 ## Answer
 - fix deployment arguments
 - fix broken config map issues.
-- fix wrong filename
+- fix wrong filename in kustomize
 --->
 ---
 
