@@ -2,7 +2,7 @@
 
 These 4 small challenges/scenarios will test how many and how fast users of the KRH find and fix bugs caused by broken references in Kubernetes manifests. Each challenge will run until the participant has either found and fixed all the issues or 5 minutes have passed.
 
-The point is not to test the users knowledge of Kubernetes, but instead... 
+The goal is not to test the users' knowledge of Kubernetes.
 
 ## How long does it take?
 
@@ -14,12 +14,12 @@ The point is not to test the users knowledge of Kubernetes, but instead...
 
 ## Rules
 - You are allowed to read this README, before starting the challenges.
-- You are allowed to read the [marketplace page](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter), before starting the challenges.
+- You are allowed to read the [marketplace page](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter) before starting the challenges.
 - You are *not* allowed to add, delete, or move files
 - You are *not* allowed to change the yaml-structure or add/delete/modify new fields to each Kubernetes Resources
 - You are *not* allowed to change the namespace or name of resources. 
 - You can use a terminal all you want. 
-- Each challenge should be opened as new window - So the files are the only files in the workspace.
+- Each challenge should be opened as a new window - So the files are the only files in the workspace.
 
 ### Participants using the [_KRH_](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter) 
 - All features are allowed during the tests.
@@ -44,9 +44,9 @@ References: ingress ref, service, configMap|secret ref, free service)
 --->
 
 ## Descriptions
-You want to deploy your 3 layered stack to Kubernetes. The system contains a *frontend*, *backend*, and *database*; Each containing one or more kubernetes resources.
+You want to deploy your 3 layered stack to Kubernetes. The system contains a *frontend*, *backend*, and *database*; Each containing one or more Kubernetes resources.
 
-Users report that they can't access the frontend. You investigate and notice that the frontend simply doesn't receive any requests. Furthermore, you check the logs and see that the frontend prints the error message: "_Can't access data._"
+Users report that they can't access the frontend. You investigate and notice that the frontend doesn't receive any requests. Furthermore, you check the logs and see that the frontend prints the error message: "_Can't access data._"
 
 You want to check if there are issues related to broken references between the Kubernetes Resources.
 
@@ -83,7 +83,7 @@ References: free service, configMap|secret ref, service)
 ## Descriptions
 You are a software developer in a large company.
 
-Your team (Team A) is building a new system that depends on another team's (Team B) service. The new system only consists of a single `Deployment` that needs to access a system called *worker* and a system called *producer*. The *Worker*-deployment does not have a `Service` yet, so you are going to create one for Team B, so you can access their service.
+Your team (Team A) is building a new system that depends on another team's (Team B) service. The new system only consists of a single `Deployment` that needs to access a system called *worker* and a system called *producer*. The *Worker*-deployment does not have a `Service` yet, so you are going to create one for Team B so that you can access their service.
 
 You have read access to a cluster to investigate the other team's resources.
 All Team B's Kubernetes resources are located in the `team-b`-namespace.
@@ -144,7 +144,7 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 
 ## Descriptions
 Your team is new to Kubernetes, and they don't know any good practices regarding the naming and folder structure of Kubernetes resources.
-They are currently working on a few projects and experimenting with some new systems in the same repository. This means there is a lot of unused files and incomplete systems in the repository.
+They are currently working on a few projects and experimenting with some new systems in the same repository. This means there are a lot of unused files and incomplete systems in the repository.
 
 Luckily you don't need to worry about that since you will only be working in two isolated folders, `./challenge4/system-a` and `./challenge4/system-b`.
 
