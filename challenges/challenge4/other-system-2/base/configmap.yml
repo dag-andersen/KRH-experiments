@@ -6,5 +6,5 @@ metadata:
   labels:
     app: system-a
 data:
-  THIRD_PARTY_API: "https://api.example.com"
+  THIRD_PARTY_API_HOST: "https://api.example.com"
   THIRD_PARTY_API_KEY: "1234567890abcdef"

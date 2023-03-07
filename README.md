@@ -140,11 +140,11 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 --->
 ---
 
-# 4) Bidirectional dependencies  
+# 4) Two systems calling each other
 
 ## Descriptions
 Your team is new to Kubernetes, and they don't know any good practices regarding the naming and folder structure of Kubernetes resources.
-They are currently working on a few projects and experimenting with some new systems in the same repository. This means there is a lot of random files and incomplete systems lying around in the repository.
+They are currently working on a few projects and experimenting with some new systems in the same repository. This means there is a lot of unused files and incomplete systems in the repository.
 
 Luckily you don't need to worry about that since you will only be working in two isolated folders, `./challenge4/system-a` and `./challenge4/system-b`.
 
@@ -161,6 +161,7 @@ A diagram of the final result can be seen in the diagram below.
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as4.png)
+<!-- ![](./images/assignments_as4-answ.png) -->
 
 <!---
 ## Answer
@@ -171,8 +172,13 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 
 <!---
 # Questions after
-What did help you the most?
-Did the extension help?
+- What did help you the most?
+- Did the extension help?
+- Do you find the diagram useful?
+  - maybe if you had more time?
+- Years of professional experience
+- Years of professional experience with Kubernetes
+- How likely are you to recommend this extension to others working with VS Code and Kubernetes? Scales go from 1:“very unlikely” to 5:“very likely”.
 
 ---
 

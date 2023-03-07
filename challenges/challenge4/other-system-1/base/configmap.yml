@@ -4,4 +4,4 @@ metadata:
   name: my-config
 data:
   NUMBER_OF_THREAD: "2"
-  USERS: "root, admin, user"
+  USER: "root, admin, user"

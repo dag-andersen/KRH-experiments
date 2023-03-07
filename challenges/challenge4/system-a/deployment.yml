@@ -16,20 +16,20 @@ spec:
       containers:
         - image: org/system-a:latest
           name: container-a
-          args: ["--system-b-host", "system-b"] # ✅
+          args: ["--system-b-host", "service-b"]
           ports:
             - containerPort: 5000
           env:
-            - name: BACKEND_HOST
+            - name: THIRD_PARTY_API_HOST
               valueFrom:
                 configMapKeyRef:
-                  name: config-map-a # config-a
-                  key: THIRD_PARTY_API # ✅
-            - name: BACKEND_PORT
+                  name: config-map-a
+                  key: THIRD_PARTY_API_HOST
+            - name: THIRD_PARTY_API_ACCESS_TOKEN
               valueFrom:
                 configMapKeyRef:
-                  name: config-a # ✅
-                  key: THIRD_PARTY_API_TOKEN # THIRD_PARTY_API_KEY
+                  name: config-a
+                  key: THIRD_PARTY_API_TOKEN
           resources:
             limits:
               cpu: 100m

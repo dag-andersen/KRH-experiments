@@ -8,4 +8,4 @@ spec:
   - port: 5432
     protocol: TCP
   selector:
-    system: b # app: system-b
+    app: system-b

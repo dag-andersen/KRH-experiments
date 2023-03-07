@@ -22,22 +22,22 @@ spec:
             - containerPort: 5432
           env: 
             - name: SYSTEM_A_HOST
-              value: "service-a" # ✅
+              value: "system-a-svc"
             - name: USER
               valueFrom:
                 configMapKeyRef:
-                  name: my-config # config-b
-                  key: USERS # USER
+                  name: my-config
+                  key: USER
             - name: PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: secret-b # my-secret-b
-                  key: DB_PASSCODE # PASSWORD
+                  name: secret-b
+                  key: DB_PASSCODE
             - name: THREAD_COUNT
               valueFrom:
                 configMapKeyRef:
-                  name: my-config # config-b
-                  key: NUMBER_OF_THREAD # NUMBER_OF_THREADS
+                  name: config-b
+                  key: NUMBER_OF_THREAD
           resources:
             limits:
               cpu: 100m

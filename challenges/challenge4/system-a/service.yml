@@ -7,4 +7,4 @@ spec:
   - port: 5000
     protocol: TCP
   selector:
-    app: a-system # app: system-a 
+    app: a-system
