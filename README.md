@@ -1,58 +1,38 @@
-# Assignments for testing the impact of using the [_KRH_](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter)
+# Testing the [_KRH_](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter)
 
-This assignment will test how many and how fast users of the KRH find and fix bugs caused by broken references in Kubernetes manifests. Each task will run until the participant has either found and fixed all the issues or 5 minutes have passed.
+These 4 small challenges/scenarios will test how many and how fast users of the KRH find and fix bugs caused by broken references in Kubernetes manifests. Each challenge will run until the participant has either found and fixed all the issues or 5 minutes have passed.
+
+The point is not to test the users knowledge of Kubernetes, but instead... 
+
+## How long does it take?
+
+- 5 minutes introduction
+- 4 scenarios, 5 minutes each.
+- 5 minutes of questions. 
+
+= around ~30 minutes 
 
 ## Rules
-- You are allowed to read the README, before starting the assignments.
-- You are *not* allowed to add or delete files
-- You are *not* allowed to move files.
+- You are allowed to read this README, before starting the challenges.
+- You are allowed to read the [marketplace page](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter), before starting the challenges.
+- You are *not* allowed to add, delete, or move files
 - You are *not* allowed to change the yaml-structure or add/delete/modify new fields to each Kubernetes Resources
 - You are *not* allowed to change the namespace or name of resources. 
 - You can use a terminal all you want. 
-- Each assignment should be opened as new window - So the assignment files are the only files in the workspace.
+- Each challenge should be opened as new window - So the files are the only files in the workspace.
+
+### Participants using the [_KRH_](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter) 
+- All features are allowed during the tests.
+- All features can be enabled and disabled during the test if needed.
 
 ## Broken Reference Example
 
-<table>
-<tr>
-<th> Pod </th>
-<th> ConfigMap </th>
-</tr>
-<tr>
-<td>
+![](./images/assignments_wrong.png)
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod
-spec:
-  containers:
-    - name: my-container
-      image: "org/image"
-      env:
-      - name: "DB_PASSWORD"
-        valueFrom:
-          configMapKeyRef:
-            name: my-configgg  ⬅️ ❌ WRONG REFERENCE ❗️
-            key: DB_PASSWOOORD ⬅️ ❌ WRONG REFERENCE ❗️
-```
+## Correct Reference Example
 
-</td>
-<td>
+![](./images/assignments_correct.png)
 
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: my-config
-data:
-  DB_PASSWORD: "Sheeesh"
-```
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -64,11 +44,9 @@ References: ingress ref, service, configMap|secret ref, free service)
 --->
 
 ## Descriptions
-You want to deploy your 3 layered stack to Kubernetes. The system contains a *frontend*, *backend*, and *database*.
+You want to deploy your 3 layered stack to Kubernetes. The system contains a *frontend*, *backend*, and *database*; Each containing one or more kubernetes resources.
 
-Users report that they can't access the frontend. You investigate and realize that the frontend simply doesn't receive any requests.
-
-Furthermore, you check the logs and see that the frontend prints the error message: "Can't access data."
+Users report that they can't access the frontend. You investigate and notice that the frontend simply doesn't receive any requests. Furthermore, you check the logs and see that the frontend prints the error message: "_Can't access data._"
 
 You want to check if there are issues related to broken references between the Kubernetes Resources.
 
@@ -82,6 +60,8 @@ The files can be seen in `./challenge1`
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as1.png)
+<!-- ![](./images/assignments_as1-answ.png) -->
+<!-- ![](./images/assignments_test.png) -->
 
 <!---
 ## Answer

@@ -29,13 +29,13 @@ spec:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: DB_PASSWORD
-                  name: postgres-secret
+                  key: DB_PASSWOORD
+                  name: postgres-secrets
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
                   name: postgres-config
-                  key: DB_NAME
+                  key: DB_USER_ACCESS_KEY
           resources:
             limits:
               cpu: 100m

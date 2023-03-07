@@ -4,5 +4,4 @@ metadata:
   namespace: default
   name: backend-config
 data:
-  BACKEND_HOST: "https://backend"
-  BACKEND_PORT: '5000'
+  BACKEND_HOST: "https://backend:5000"

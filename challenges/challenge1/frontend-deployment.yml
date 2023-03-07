@@ -25,11 +25,6 @@ spec:
                 configMapKeyRef:
                   name: backend-config
                   key: BACKEND_HOST
-            - name: BACKEND_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: backend-config
-                  key: BACKEND_PORT
           resources: 
             limits:
               cpu: 100m

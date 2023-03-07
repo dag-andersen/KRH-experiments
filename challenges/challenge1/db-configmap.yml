@@ -4,7 +4,6 @@ metadata:
   name: postgres-config
   namespace: default
 data:
-  DB_HOST: "postgres"
   DB_PORT: "5432"
-  DB_USER: superuser
-  DB_NAME: quotes
+  DB_USER_KEY: "VEhJUyBJUyBBTiBBQ0NFU1MgS0VZCg"
+  DB_TABLE_NAME: "TABLE_1"

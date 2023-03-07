@@ -16,21 +16,24 @@ spec:
         app: backend
     spec:
       containers:
-        - image: ghcr.io/eficode-academy/quotes-flask-backend:release
+        - image: org/backend:release
           name: backend
           ports:
             - containerPort: 5000
+          args:
+            - "--BACKEND_ADDRESS"
+            - "postgres-svc"
           env:
-            - name: BACKEND_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-config
-                  key: DB_HOST
             - name: BACKEND_PORT
               valueFrom:
                 configMapKeyRef:
-                  name: postgres-config
-                  key: DB_PORT 
+                  name: postgres-configmap
+                  key: DB_PORT
+            - name: DB_TABLE
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-configmap
+                  key: DB_TABLE
           resources:
             limits:
               cpu: 100m
