@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: default
+  name: frontend-dpl
   labels:
     app: frontend
-  name: frontend
 spec:
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: ghcr.io/eficode-academy/quotes-flask-frontend:release
+        - image: org/frontend:latest
           name: frontend
           ports:
             - containerPort: 5000
