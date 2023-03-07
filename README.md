@@ -73,7 +73,7 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 
 ---
 
-# 2) External team dependency
+# 2) Kubernetes resources over multiple teams
 
 <!---
 Scanning Technique: Cluster
@@ -81,9 +81,9 @@ References: free service, configMap|secret ref, service)
 --->
 
 ## Descriptions
-You are a software developer in a large company. 
+You are a software developer in a large company.
 
-Your team (Team A) is building a new system that depends on another team's (Team B) service. The new system only consists of a single `Deployment` that needs to access a system called *worker* and a system called *producer*. The *Worker*-deployment does not have a `Service` yet, so you are going to make that for Team B, so you can access their service.
+Your team (Team A) is building a new system that depends on another team's (Team B) service. The new system only consists of a single `Deployment` that needs to access a system called *worker* and a system called *producer*. The *Worker*-deployment does not have a `Service` yet, so you are going to create one for Team B, so you can access their service.
 
 You have read access to a cluster to investigate the other team's resources.
 All Team B's Kubernetes resources are located in the `team-b`-namespace.
@@ -99,6 +99,7 @@ The files needed can be seen in `./challenge2`
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
 
 ![](./images/assignments_as2.png)
+<!-- ![](./images/assignments_as2-answ.png) -->
 
 <!---
 ## Answer

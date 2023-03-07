@@ -13,14 +13,14 @@ spec:
           name: container
           env:
           - name: PRODUCER_URL
-            value: "http://producer-service.team-b:5000"
+            value: "http://producer-service.team-a:5432"
           - name: WORKER_URL
-            value: "http://worker-service.team-b:5000"
+            value: "http://worker-service.team-b:8000"
           - name: SOME_ENV_VAR
             valueFrom:
               configMapKeyRef:
-                name: my-config # my-config-a
-                key: ENVIRONMENT_VAR_8 # ENVIRONMENT_VAR_4
+                name: my-configmap-team-a
+                key: ENVIRONMENT_VAR_8
           resources:
             limits:
               cpu: 100m
