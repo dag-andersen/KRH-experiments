@@ -29,11 +29,6 @@ spec:
                 configMapKeyRef:
                   name: postgres-configmap
                   key: DB_PORT
-            - name: DB_TABLE
-              valueFrom:
-                configMapKeyRef:
-                  name: postgres-configmap
-                  key: DB_TABLE
           resources:
             limits:
               cpu: 100m

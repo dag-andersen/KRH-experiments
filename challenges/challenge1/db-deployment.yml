@@ -21,17 +21,17 @@ spec:
           ports:
             - containerPort: 5432
           env:
-            - name: POSTGRES_USER
+            - name: POSTGRES_TABLE
               valueFrom:
                 configMapKeyRef:
                   name: postgres-config
-                  key: DB_USER
+                  key: DB_TABLE
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   key: DB_PASSWOORD
                   name: postgres-secrets
-            - name: POSTGRES_DB
+            - name: POSTGRES_USER_KEY
               valueFrom:
                 configMapKeyRef:
                   name: postgres-config
