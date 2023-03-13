@@ -4,18 +4,25 @@ metadata:
   name: my-pod
 spec:
   containers:
-    - name: echo-server
+    - name: cool-container
       image: "org/image"
       env:
       - name: "DB_PASSWORD"
         valueFrom:
           configMapKeyRef:
-            name: my-configgg
-            key: DB_PASSWORD
+            name: my-wrong-config
+            key: DB_PASSWOOOOORD
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my-config 
+  name: my-cool-config
 data:
   DB_PASSWORD: "very secret password"
