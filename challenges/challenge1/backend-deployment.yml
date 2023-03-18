@@ -19,10 +19,10 @@ spec:
         - image: org/backend:release
           name: backend
           ports:
-            - containerPort: 5000
+            - containerPort: 3000
           args:
-            - "--BACKEND_ADDRESS"
-            - "postgres-svc"
+            - "--backend-address"
+            - "postgres-svc.default"
           env:
             - name: BACKEND_PORT
               valueFrom:
