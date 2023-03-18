@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  STAGE_DATABASE_ACCESS_TOKEN: "very-secret-token"
+  STAGE_DATABASE_USER: "my-username"

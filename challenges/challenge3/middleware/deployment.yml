@@ -10,7 +10,7 @@ spec:
       containers:
         - image: dagandersen/middleware:latest
           name: service
-          args: 
+          args:
             - "--database"
             - "http://database-service.default:5000"
             - "--worker"
@@ -18,20 +18,20 @@ spec:
           ports:
             - containerPort: 5000
           env:
-          - name: DATABASE_ACCESS_TOKEN
-            valueFrom:
-              configMapKeyRef:
-                name: prod-database-config
-                key: DATABASE_ACCESS_TOKEN
           - name: DATABASE_USERNAME
             valueFrom:
               configMapKeyRef:
                 name: prod-database-config
-                key: SYST3M_1_USERNAME
+                key: PROD_DATABASE_USERNAME
+          - name: DATABASE_ACCESS_TOKEN
+            valueFrom:
+              configMapKeyRef:
+                name: stage-database-config
+                key: PROD_DATABASE_ACCESS_TOKEN
           - name: REFRESH_INTERVAL
             valueFrom:
               configMapKeyRef:
-                name: my-config
+                name: config-map
                 key: INTERVALS_REFRESH 
           resources:
             limits:

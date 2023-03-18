@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  PROD_DATABASE_ACCESS_TOKEN: "very-secret-token"
+  PROD_DATABASE_USER: "my-username"

@@ -5,3 +5,5 @@ commonLabels:
   env: staging
 resources:
   - ../../base
+patchesStrategicMerge:
+  - configmap.yml
