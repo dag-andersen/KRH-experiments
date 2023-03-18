@@ -22,7 +22,7 @@ spec:
             - containerPort: 5432
           env: 
             - name: SYSTEM_A_HOST
-              value: "system-a-svc"
+              value: "system-a-svc:3000"
             - name: USER
               valueFrom:
                 configMapKeyRef:
