@@ -28,6 +28,10 @@ Around 30 minutes
 - All features can be enabled and disabled during the test if needed.
 
 ---
+## After the experiment
+After completing the 4 challenges, run `git diff > my.patch` and send me the `my.patch` file.
+
+---
 ## Examples
 
 ## Correct Reference
@@ -56,14 +60,14 @@ Users report that they can't access the frontend. You investigate and notice tha
 
 You want to check if there are issues related to broken references between the Kubernetes resources.
 
-The files can be seen in `./challenge1`. There is only one resource per file. Each resource in the diagram below has it own file. 
+The files can be seen in `./challenge1`. There is only one resource per file. Each resource in the diagram below has its own file. 
 
 ### Task (Max 5 minutes)
 - Find and fix the broken references
 
 ### Diagram
 
-Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resources exists in its own file. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resource exists in its own file. 
 
 <p float="left"><img src="/images/assignments_as1.png" width="1100" /></p>
 <!-- <p float="left"><img src="/images/assignments_as1-answ.png" width="1100" /></p> -->
@@ -88,7 +92,7 @@ References: free service, configMap|secret ref, service)
 ### Descriptions
 You are a software developer in a large company.
 
-Your team (Team A) is building a new system that depends on another team's (Team B) services. The new system only consists of a single `Deployment` that needs to access a system called ***worker*** and a system called ***producer***. Both owned by Team B.
+Your team (Team A) is building a new system that depends on another team's (Team B) services. The new system only consists of a single `Deployment` that needs to access a system called ***worker*** and a system called ***producer***. Both are owned by Team B.
 
 The ***Worker***-deployment does not have a `Service` yet, so you are going to create one for Team B so that you can access their service.
 
@@ -103,7 +107,7 @@ The files needed can be seen in `./challenge2`. There is only one resource per f
 - Find and fix the broken references
 
 ### Diagram
-Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other.
 
 <p float="left"><img src="/images/assignments_as2.png" width="1100" /></p>
 <!-- <p float="left"><img src="/images/assignments_as2-answ.png" width="1100" /></p> -->
@@ -115,8 +119,6 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 - fix selector in service in workspace
 - fix free service ref to deployment in cluster.
 --->
-
-// TODO: static kubeconfig
 
 ---
 
@@ -132,13 +134,13 @@ Your team has 2 systems running in ***production***. The systems are named `Data
 
 The team needs to build a simple integration between the two systems. The new system is named *middleware*, and it is your job to create the Kubernetes manifests for the new system.
 
-The files can be seen in `./challenge3/middleware`. There is only one resource per file. Each resource in the diagram below has it own file. 
+The files can be seen in `./challenge3/middleware`. There is only one resource per file. Each resource in the diagram below has its own file. 
 
 ### Task (max 5 minutes)
 - Find and fix the broken references
 
 ### Diagram
-Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resources exists in its own file. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resource exists in its own file.
 
 <p float="left"><img src="/images/assignments_as3.png" width="1100" /></p>
 <!-- <p float="left"><img src="/images/assignments_as3-answ.png" width="1100" /></p> -->
@@ -169,7 +171,7 @@ A diagram of the final result can be seen in the diagram below.
 
 ### Diagram
 
-Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resources exists in its own file. 
+Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resource exists in its own file. 
 
 <p float="left"><img src="/images/assignments_as4.png" width="1100" /></p>
 <!-- <p float="left"><img src="/images/assignments_as4-answ.png" width="1100" /></p> -->
