@@ -11,22 +11,22 @@ spec:
         - image: dagandersen/middleware:latest
           name: service
           args: 
-            - "--system1"
-            - "http://system1-service.default:5000"
-            - "--system2"
-            - "http://prod-system2-service.default:5000"
+            - "--database"
+            - "http://database-service.default:5000"
+            - "--worker"
+            - "http://prod-worker-service.default:5000"
           ports:
             - containerPort: 5000
           env:
-          - name: SYSTEM_1_ACCESS_TOKEN
+          - name: DATABASE_ACCESS_TOKEN
             valueFrom:
               configMapKeyRef:
-                name: prod-system1-config
-                key: SYSTEM_1_ACCESS_TOKEN
-          - name: SYSTEM_1_USERNAME
+                name: prod-database-config
+                key: DATABASE_ACCESS_TOKEN
+          - name: DATABASE_USERNAME
             valueFrom:
               configMapKeyRef:
-                name: prod-system1-config
+                name: prod-database-config
                 key: SYST3M_1_USERNAME
           - name: REFRESH_INTERVAL
             valueFrom:

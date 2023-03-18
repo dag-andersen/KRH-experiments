@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namePrefix: system2-
-namespace: system2
+namePrefix: worker-
+namespace: worker
 commonLabels:
-  app: system2
+  app: worker
 resources:
   - deployment.yml
   - service.yml

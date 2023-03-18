@@ -8,7 +8,7 @@ spec:
   template:
     spec:
       containers:
-        - image: dagandersen/system1:latest
+        - image: org/database:latest
           name: service
           ports:
             - containerPort: 5000
