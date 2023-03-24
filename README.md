@@ -17,7 +17,7 @@ Around 30 minutes
 ## Rules
 - You are allowed to read this README, before starting the challenges.
 - You are allowed to read the [marketplace page](https://marketplace.visualstudio.com/items?itemName=dag-andersen.kubernetes-reference-highlighter) before starting the challenges.
-- You are *not* allowed to add, delete, or move files
+- You are *not* allowed to add, delete, rename, or move files
 - You are *not* allowed to change the yaml-structure or add/delete new fields in the Kubernetes manifests
 - You are *not* allowed to change the namespace or name of resources. 
 - You can use a terminal all you want. 
@@ -153,7 +153,7 @@ Your company has a diagram that shows how the Kubernetes resources are supposed 
 --->
 ---
 
-## 4) Two systems interconnected systems
+## 4) Two interconnected systems
 
 ### Descriptions
 Your team is new to Kubernetes, and they don't know any good practices regarding the naming and folder structure of Kubernetes resources.

@@ -10,7 +10,7 @@ spec:
         - image: org/database:latest
           name: service
           ports:
-            - containerPort: 5000
+            - containerPort: 3000
           resources:
             limits:
               cpu: 100m

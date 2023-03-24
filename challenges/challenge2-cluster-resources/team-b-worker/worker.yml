@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: correct-worker
+  name: worker
   namespace: team-b
   labels:
     system: worker
@@ -22,7 +22,7 @@ spec:
           name: backend
           command: ["sh", "-c", "while true; do echo 'Hello, World!'; sleep 10; done"]
           ports:
-            - containerPort: 5000
+            - containerPort: 8080
           resources:
             limits:
               cpu: 100m
