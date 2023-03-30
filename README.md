@@ -36,11 +36,11 @@ After completing the 4 challenges, run `git diff > my.patch` and send me the `my
 
 ## Correct Reference
 
-<p float="left"><img src="/images/assignments_correct.png" width="800" /></p>
+<p float="left"><img src="/images/challenge_correct.png" width="800" /></p>
 
 ## Broken Reference
 
-<p float="left"><img src="/images/assignments_broken.png" width="800" /></p>
+<p float="left"><img src="/images/challenge_broken.png" width="800" /></p>
 
 ---
 
@@ -69,8 +69,8 @@ The files can be seen in `./challenge1`. There is only one resource per file. Ea
 
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resource exists in its own file. 
 
-<p float="left"><img src="/images/assignments_as1.png" width="1100" /></p>
-<!-- <p float="left"><img src="/images/assignments_as1-answ.png" width="1100" /></p> -->
+<p float="left"><img src="/images/challenge_as1.png" width="1100" /></p>
+<!-- <p float="left"><img src="/images/challenge_as1-answ.png" width="1100" /></p> -->
 
 <!---
 ## Answer
@@ -109,8 +109,8 @@ The files needed can be seen in `./challenge2`. There is only one resource per f
 ### Diagram
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other.
 
-<p float="left"><img src="/images/assignments_as2.png" width="1100" /></p>
-<!-- <p float="left"><img src="/images/assignments_as2-answ.png" width="1100" /></p> -->
+<p float="left"><img src="/images/challenge_as2.png" width="1100" /></p>
+<!-- <p float="left"><img src="/images/challenge_as2-answ.png" width="1100" /></p> -->
 
 
 <!---
@@ -142,8 +142,8 @@ The files can be seen in `./challenge3/middleware`. There is only one resource p
 ### Diagram
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resource exists in its own file.
 
-<p float="left"><img src="/images/assignments_as3.png" width="1100" /></p>
-<!-- <p float="left"><img src="/images/assignments_as3-answ.png" width="1100" /></p> -->
+<p float="left"><img src="/images/challenge_as3.png" width="1100" /></p>
+<!-- <p float="left"><img src="/images/challenge_as3-answ.png" width="1100" /></p> -->
 
 <!---
 ### Answer
@@ -173,8 +173,8 @@ A diagram of the final result can be seen in the diagram below.
 
 Your company has a diagram that shows how the Kubernetes resources are supposed to depend on each other. Each Kubernetes resource exists in its own file. 
 
-<p float="left"><img src="/images/assignments_as4.png" width="1100" /></p>
-<!-- <p float="left"><img src="/images/assignments_as4-answ.png" width="1100" /></p> -->
+<p float="left"><img src="/images/challenge_as4.png" width="1100" /></p>
+<!-- <p float="left"><img src="/images/challenge_as4-answ.png" width="1100" /></p> -->
 
 <!---
 ### Answer
