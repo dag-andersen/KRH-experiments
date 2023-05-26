@@ -1,0 +1,104 @@
+diff --git a/scenarios/scenario1/db-deployment.yml b/scenarios/scenario1/db-deployment.yml
+index 47c31ca..dd1fa5f 100644
+--- a/scenarios/scenario1/db-deployment.yml
++++ b/scenarios/scenario1/db-deployment.yml
+@@ -30,7 +30,7 @@ spec:
+               valueFrom:
+                 secretKeyRef:
+                   key: DB_PASSWOORD
+-                  name: postgres-secrets
++                  name: postgres-secret
+             - name: POSTGRES_USER_KEY
+               valueFrom:
+                 configMapKeyRef:
+diff --git a/scenarios/scenario2/deployment.yml b/scenarios/scenario2/deployment.yml
+index 9014111..135a353 100644
+--- a/scenarios/scenario2/deployment.yml
++++ b/scenarios/scenario2/deployment.yml
+@@ -15,7 +15,7 @@ spec:
+           - name: PRODUCER_URL
+             value: "http://producer-service.team-a:5432"
+           - name: WORKER_URL
+-            value: "http://worker-service.team-b:8000"
++            value: "http://worker-service.team-b:8080"
+           - name: SOME_ENV_VAR
+             valueFrom:
+               configMapKeyRef:
+diff --git a/scenarios/scenario3/middleware/deployment.yml b/scenarios/scenario3/middleware/deployment.yml
+index 016424a..90a6d8a 100644
+--- a/scenarios/scenario3/middleware/deployment.yml
++++ b/scenarios/scenario3/middleware/deployment.yml
+@@ -12,7 +12,7 @@ spec:
+           name: service
+           args:
+             - "--database"
+-            - "http://database-service.default:5000"
++            - "http://database-service.default:3000"
+             - "--worker"
+             - "http://prod-worker-service.default:5000"
+           ports:
+@@ -26,7 +26,7 @@ spec:
+           - name: DATABASE_ACCESS_TOKEN
+             valueFrom:
+               configMapKeyRef:
+-                name: stage-database-config
++                name: prod-database-config
+                 key: PROD_DATABASE_ACCESS_TOKEN
+           - name: REFRESH_INTERVAL
+             valueFrom:
+diff --git a/scenarios/scenario4/system-a/deployment.yml b/scenarios/scenario4/system-a/deployment.yml
+index 02d3e1d..2fc6be7 100644
+--- a/scenarios/scenario4/system-a/deployment.yml
++++ b/scenarios/scenario4/system-a/deployment.yml
+@@ -20,16 +20,16 @@ spec:
+           ports:
+             - containerPort: 5000
+           env:
+-            - name: THIRD_PARTY_API_HOST
++            - name: THIRD_PARTY_API
+               valueFrom:
+                 configMapKeyRef:
+                   name: config-map-a
+-                  key: THIRD_PARTY_API_HOST
+-            - name: THIRD_PARTY_API_ACCESS_TOKEN
++                  key: THIRD_PARTY_API
++            - name: THIRD_PARTY_API_KEY
+               valueFrom:
+                 configMapKeyRef:
+                   name: config-a
+-                  key: THIRD_PARTY_API_TOKEN
++                  key: THIRD_PARTY_API_KEY
+           resources:
+             limits:
+               cpu: 100m
+diff --git a/scenarios/scenario4/system-b/deployment.yml b/scenarios/scenario4/system-b/deployment.yml
+index 7ffa62b..9f9ca2c 100644
+--- a/scenarios/scenario4/system-b/deployment.yml
++++ b/scenarios/scenario4/system-b/deployment.yml
+@@ -22,22 +22,22 @@ spec:
+             - containerPort: 5432
+           env: 
+             - name: SYSTEM_A_HOST
+-              value: "system-a-svc:3000"
++              value: "system-a-svc:5000"
+             - name: USER
+               valueFrom:
+                 configMapKeyRef:
+-                  name: my-config
++                  name: config-b
+                   key: USER
+             - name: PASSWORD
+               valueFrom:
+                 secretKeyRef:
+-                  name: secret-b
++                  name: my-secret-b
+                   key: DB_PASSCODE
+             - name: THREAD_COUNT
+               valueFrom:
+                 configMapKeyRef:
+                   name: config-b
+-                  key: NUMBER_OF_THREAD
++                  key: NUMBER_OF_THREADS
+           resources:
+             limits:
+               cpu: 100m

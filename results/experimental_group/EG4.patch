@@ -1,0 +1,186 @@
+diff --git a/scenarios/scenario1/backend-configmap.yml b/scenarios/scenario1/backend-configmap.yml
+index 093895e..3a49ede 100644
+--- a/scenarios/scenario1/backend-configmap.yml
++++ b/scenarios/scenario1/backend-configmap.yml
+@@ -4,4 +4,4 @@ metadata:
+   namespace: default
+   name: backend-config
+ data:
+-  BACKEND_HOST: "https://backend:5000"
++  BACKEND_HOST: "https://backend:3000"
+diff --git a/scenarios/scenario1/backend-deployment.yml b/scenarios/scenario1/backend-deployment.yml
+index 74515bb..278b24c 100644
+--- a/scenarios/scenario1/backend-deployment.yml
++++ b/scenarios/scenario1/backend-deployment.yml
+@@ -27,7 +27,7 @@ spec:
+             - name: DATABASE_PORT
+               valueFrom:
+                 configMapKeyRef:
+-                  name: postgres-configmap
++                  name: postgres-config
+                   key: DB_PORT
+           resources:
+             limits:
+diff --git a/scenarios/scenario1/db-deployment.yml b/scenarios/scenario1/db-deployment.yml
+index 47c31ca..5e08fa2 100644
+--- a/scenarios/scenario1/db-deployment.yml
++++ b/scenarios/scenario1/db-deployment.yml
+@@ -29,8 +29,8 @@ spec:
+             - name: POSTGRES_PASSWORD
+               valueFrom:
+                 secretKeyRef:
+-                  key: DB_PASSWOORD
+-                  name: postgres-secrets
++                  key: DB_PASSWORD
++                  name: postgres-secret
+             - name: POSTGRES_USER_KEY
+               valueFrom:
+                 configMapKeyRef:
+diff --git a/scenarios/scenario1/frontend-ingress.yml b/scenarios/scenario1/frontend-ingress.yml
+index e56fea6..b3e9903 100644
+--- a/scenarios/scenario1/frontend-ingress.yml
++++ b/scenarios/scenario1/frontend-ingress.yml
+@@ -16,4 +16,4 @@ spec:
+             service: 
+               name: frontend
+               port:
+-                number: 3000
++                number: 5000
+diff --git a/scenarios/scenario2/deployment.yml b/scenarios/scenario2/deployment.yml
+index 9014111..9f7f7e1 100644
+--- a/scenarios/scenario2/deployment.yml
++++ b/scenarios/scenario2/deployment.yml
+@@ -13,14 +13,14 @@ spec:
+           name: container
+           env:
+           - name: PRODUCER_URL
+-            value: "http://producer-service.team-a:5432"
++            value: "http://producer-service.team-b:5432"
+           - name: WORKER_URL
+-            value: "http://worker-service.team-b:8000"
++            value: "http://worker-service.team-b:8080"
+           - name: SOME_ENV_VAR
+             valueFrom:
+               configMapKeyRef:
+-                name: my-configmap-team-a
+-                key: ENVIRONMENT_VAR_8
++                name: my-config-team-a
++                key: ENVIRONMENT_VAR_4
+           resources:
+             limits:
+               cpu: 100m
+diff --git a/scenarios/scenario2/worker-svc.yml b/scenarios/scenario2/worker-svc.yml
+index 514a614..770213d 100644
+--- a/scenarios/scenario2/worker-svc.yml
++++ b/scenarios/scenario2/worker-svc.yml
+@@ -7,4 +7,4 @@ spec:
+   ports:
+   - port: 8080
+   selector:
+-    app: my-worker
++    system: worker
+diff --git a/scenarios/scenario3/middleware/deployment.yml b/scenarios/scenario3/middleware/deployment.yml
+index 016424a..799ad94 100644
+--- a/scenarios/scenario3/middleware/deployment.yml
++++ b/scenarios/scenario3/middleware/deployment.yml
+@@ -12,7 +12,7 @@ spec:
+           name: service
+           args:
+             - "--database"
+-            - "http://database-service.default:5000"
++            - "http://database-service.default:3000"
+             - "--worker"
+             - "http://prod-worker-service.default:5000"
+           ports:
+@@ -22,17 +22,17 @@ spec:
+             valueFrom:
+               configMapKeyRef:
+                 name: prod-database-config
+-                key: PROD_DATABASE_USERNAME
++                key: PROD_DATABASE_USER
+           - name: DATABASE_ACCESS_TOKEN
+             valueFrom:
+               configMapKeyRef:
+-                name: stage-database-config
++                name: prod-database-config
+                 key: PROD_DATABASE_ACCESS_TOKEN
+           - name: REFRESH_INTERVAL
+             valueFrom:
+               configMapKeyRef:
+                 name: config-map
+-                key: INTERVALS_REFRESH 
++                key: INTERVAL_REFRESH
+           resources:
+             limits:
+               cpu: 100m
+diff --git a/scenarios/scenario3/middleware/kustomization.yml b/scenarios/scenario3/middleware/kustomization.yml
+index 7311c9d..e6dc3b8 100644
+--- a/scenarios/scenario3/middleware/kustomization.yml
++++ b/scenarios/scenario3/middleware/kustomization.yml
+@@ -6,5 +6,5 @@ commonLabels:
+   app: middleware
+ resources:
+   - deployment.yml
+-  - configmap.yml
++  - config-map.yml
+   - service.yml
+\ No newline at end of file
+diff --git a/scenarios/scenario4/system-a/deployment.yml b/scenarios/scenario4/system-a/deployment.yml
+index 02d3e1d..53afdba 100644
+--- a/scenarios/scenario4/system-a/deployment.yml
++++ b/scenarios/scenario4/system-a/deployment.yml
+@@ -23,13 +23,13 @@ spec:
+             - name: THIRD_PARTY_API_HOST
+               valueFrom:
+                 configMapKeyRef:
+-                  name: config-map-a
+-                  key: THIRD_PARTY_API_HOST
++                  name: config-a
++                  key: THIRD_PARTY_API
+             - name: THIRD_PARTY_API_ACCESS_TOKEN
+               valueFrom:
+                 configMapKeyRef:
+                   name: config-a
+-                  key: THIRD_PARTY_API_TOKEN
++                  key: THIRD_PARTY_API_KEY
+           resources:
+             limits:
+               cpu: 100m
+diff --git a/scenarios/scenario4/system-a/service.yml b/scenarios/scenario4/system-a/service.yml
+index 905db42..2f29860 100644
+--- a/scenarios/scenario4/system-a/service.yml
++++ b/scenarios/scenario4/system-a/service.yml
+@@ -7,4 +7,4 @@ spec:
+   - port: 5000
+     protocol: TCP
+   selector:
+-    app: a-system
++    app: system-a
+diff --git a/scenarios/scenario4/system-b/deployment.yml b/scenarios/scenario4/system-b/deployment.yml
+index 7ffa62b..07715c5 100644
+--- a/scenarios/scenario4/system-b/deployment.yml
++++ b/scenarios/scenario4/system-b/deployment.yml
+@@ -22,7 +22,7 @@ spec:
+             - containerPort: 5432
+           env: 
+             - name: SYSTEM_A_HOST
+-              value: "system-a-svc:3000"
++              value: "service-a:5000"
+             - name: USER
+               valueFrom:
+                 configMapKeyRef:
+@@ -32,12 +32,12 @@ spec:
+               valueFrom:
+                 secretKeyRef:
+                   name: secret-b
+-                  key: DB_PASSCODE
++                  key: DB_PASSWORD
+             - name: THREAD_COUNT
+               valueFrom:
+                 configMapKeyRef:
+                   name: config-b
+-                  key: NUMBER_OF_THREAD
++                  key: NUMBER_OF_THREADS
+           resources:
+             limits:
+               cpu: 100m
