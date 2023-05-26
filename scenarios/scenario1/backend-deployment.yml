@@ -24,7 +24,7 @@ spec:
             - "--backend-address"
             - "postgres-svc.default"
           env:
-            - name: BACKEND_PORT
+            - name: DATABASE_PORT
               valueFrom:
                 configMapKeyRef:
                   name: postgres-configmap
